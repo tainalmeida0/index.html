@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Site educativo sobre os riscos dos dispositivos eletrônicos para fumar.">
+<title>VAPE•INFO — Entenda os riscos</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap');
+:root{--bg:#08070d;--panel:#12101b;--panel2:#181324;--txt:#faf7ff;--muted:#b9afc9;--purple:#a855f7;--lilac:#d8b4fe;--pink:#f0abfc;--red:#fb7185;--line:#2a2338}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 15% 0,#32104d 0,transparent 34%),radial-gradient(circle at 100% 25%,#211139 0,transparent 30%),var(--bg);color:var(--txt);font-family:Inter,sans-serif;line-height:1.6}
+nav{position:sticky;top:0;z-index:50;padding:15px 7%;display:flex;justify-content:space-between;align-items:center;background:#08070de8;backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}.logo{font-family:"Space Grotesk";font-weight:700}.logo b{color:var(--lilac)}nav a{color:var(--muted);text-decoration:none;margin-left:20px;font-size:.9rem}nav a:hover{color:#fff}
+.hero{min-height:88vh;display:grid;place-items:center;text-align:center;padding:70px 7%;position:relative;overflow:hidden}.orb{position:absolute;border-radius:50%;filter:blur(70px);width:430px;height:430px;background:#a855f733;animation:float 7s ease-in-out infinite}.o1{left:-180px;top:70px}.o2{right:-180px;bottom:-150px;background:#e879f933}.hero>div:last-child{position:relative;z-index:2;max-width:1000px}.tag{display:inline-block;border:1px solid #c084fc66;background:#a855f715;color:var(--lilac);padding:7px 13px;border-radius:99px;text-transform:uppercase;letter-spacing:1.6px;font-size:.76rem;font-weight:800}
+h1{font-family:"Space Grotesk";font-size:clamp(3.2rem,9vw,7.5rem);line-height:.9;letter-spacing:-5px;margin:25px 0;background:linear-gradient(120deg,#fff,#d8b4fe 50%,#f0abfc);-webkit-background-clip:text;color:transparent}.hero p{max-width:720px;color:var(--muted);font-size:1.08rem;margin:auto}.btn{display:inline-block;margin-top:28px;padding:13px 19px;border:0;border-radius:14px;background:linear-gradient(135deg,var(--lilac),var(--pink));color:#140a1d;text-decoration:none;font-weight:800;cursor:pointer;box-shadow:0 12px 35px #a855f733}
+section{max-width:1200px;margin:auto;padding:85px 7%}.title{font-family:"Space Grotesk";font-size:clamp(2rem,5vw,3.3rem);letter-spacing:-2px;margin:0 0 10px}.lead{color:var(--muted);max-width:780px;margin:0 0 34px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}.card{background:linear-gradient(145deg,var(--panel2),#0e0c14);border:1px solid var(--line);border-radius:23px;padding:25px;transition:.3s;box-shadow:0 12px 35px #0005}.card:hover{transform:translateY(-7px);border-color:#c084fc66}.icon{font-size:2rem}.card h3{font-family:"Space Grotesk";margin:10px 0 7px}.card p{color:var(--muted);margin:0}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:22px}.visual{min-height:390px;border:1px solid #c084fc44;border-radius:28px;background:radial-gradient(circle at 50% 40%,#7e22ce55,transparent 35%),linear-gradient(145deg,#1b1027,#0d0b12);display:grid;place-items:center;position:relative;overflow:hidden}.lungs{font-size:8rem;filter:drop-shadow(0 0 28px #c084fc66);animation:breathe 4s ease-in-out infinite}.caption{position:absolute;bottom:18px;color:var(--muted);font-size:.88rem}.points{display:grid;gap:13px}.point{display:flex;gap:13px;padding:16px;border:1px solid var(--line);border-radius:17px;background:#11101a}.point strong{display:block}.point span{color:var(--muted);font-size:.93rem}
+.brain{padding:30px;border:1px solid #c084fc44;border-radius:27px;background:linear-gradient(135deg,#1d102e,#100d16)}.bar{height:9px;background:#2b2438;border-radius:99px;margin-top:15px;overflow:hidden}.bar i{display:block;height:100%;width:78%;background:linear-gradient(90deg,var(--purple),var(--pink));border-radius:99px}.warning{margin-top:22px;padding:22px;border:1px solid #fb718555;background:#fb718510;border-radius:20px}.warning b{color:#fda4af}
+.quiz{border:1px solid var(--line);border-radius:28px;padding:28px;background:linear-gradient(145deg,#160e20,#0d0b12)}.q{padding:20px 0;border-bottom:1px solid var(--line)}.q h3{font-size:1rem}.opts{display:grid;gap:9px}.opts button{background:#171320;color:#fff;border:1px solid var(--line);padding:12px 14px;border-radius:13px;text-align:left;cursor:pointer}.opts button:hover,.opts button.sel{border-color:#d8b4fe;background:#a855f722}.result{display:none;margin-top:22px;padding:22px;border:1px solid #c084fc55;background:#a855f712;border-radius:20px}.score{font-family:"Space Grotesk";font-size:2.7rem;color:var(--lilac)}
+.source{padding:18px;border:1px solid var(--line);border-radius:16px;background:#0f0d15;color:var(--muted)}.source b{color:#fff}.source a{color:var(--lilac)}footer{padding:40px 7%;text-align:center;color:#8f879d;border-top:1px solid var(--line);font-size:.85rem}
+@keyframes float{50%{transform:translateY(-25px) scale(1.05)}}@keyframes breathe{50%{transform:scale(1.08)}}@media(max-width:760px){nav a{display:none}.split{grid-template-columns:1fr}h1{letter-spacing:-3px}}
+
+.reveal{opacity:0;transform:translateY(25px);transition:opacity .7s ease,transform .7s ease}.reveal.show{opacity:1;transform:none}
+.glowline{height:1px;background:linear-gradient(90deg,transparent,#c084fc,transparent);margin:0 7%;opacity:.45}
+.counter{font-family:"Space Grotesk";font-size:2.2rem;color:var(--lilac);font-weight:700}
+.mini{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:1px}
+.pulse{animation:pulse 2.4s ease-in-out infinite}
+.float-card{position:relative}.float-card:after{content:"";position:absolute;inset:-1px;border-radius:inherit;background:linear-gradient(120deg,transparent,rgba(216,180,254,.14),transparent);opacity:0;transition:.4s;pointer-events:none}.float-card:hover:after{opacity:1}
+.progress-wrap{margin:0 0 20px}.progress-label{display:flex;justify-content:space-between;color:var(--muted);font-size:.82rem}.progress{height:7px;background:#282134;border-radius:99px;overflow:hidden;margin-top:7px}.progress i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--purple),var(--pink));transition:width .45s}
+.q{display:none}.q.active{display:block;animation:qIn .4s ease}.quiz-nav{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.quiz-nav button{border:1px solid var(--line);background:#171320;color:#fff;border-radius:12px;padding:10px 15px;cursor:pointer}.quiz-nav .primary{background:linear-gradient(135deg,var(--lilac),var(--pink));color:#140a1d;border:0;font-weight:800}
+.badge{display:inline-block;padding:5px 9px;border-radius:999px;background:#a855f71a;border:1px solid #c084fc44;color:var(--lilac);font-size:.75rem;font-weight:700}
+@keyframes pulse{50%{transform:scale(1.04)}}@keyframes qIn{from{opacity:0;transform:translateX(18px)}to{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<nav><div class="logo">VAPE<b>•</b>INFO</div><div><a href="#riscos">Riscos</a><a href="#cerebro">Cérebro</a><a href="#quiz">Quiz</a><a href="#fontes">Fontes</a></div></nav>
+
+<header class="hero">
+<div class="orb o1"></div><div class="orb o2"></div>
+<div>
+<span class="tag">informação • prevenção • saúde</span>
+<h1>Vape não é<br>“só vapor”.</h1>
+<p>Um guia visual para entender os dispositivos eletrônicos para fumar, seus riscos para adolescentes e o que os órgãos oficiais de saúde dizem.</p>
+<a class="btn" href="#riscos">Explorar os riscos ↓</a>
+</div>
+</header>
+
+<div class="glowline"></div>
+<section class="reveal" style="padding-top:45px;padding-bottom:35px">
+<div class="grid">
+<div class="card float-card" style="text-align:center"><div class="counter">🫁</div><div class="mini">Pulmões</div><p>Exposição a aerossóis e substâncias potencialmente tóxicas.</p></div>
+<div class="card float-card" style="text-align:center"><div class="counter">🧠</div><div class="mini">Cérebro</div><p>A nicotina pode causar dependência durante o desenvolvimento.</p></div>
+<div class="card float-card" style="text-align:center"><div class="counter">🚫</div><div class="mini">Brasil</div><p>DEFs têm comercialização e propaganda proibidas.</p></div>
+</div>
+</section>
+<section id="riscos">
+<h2 class="title">O que pode acontecer?</h2>
+<p class="lead">Os dispositivos eletrônicos para fumar produzem aerossóis que podem conter nicotina e outras substâncias. A Anvisa destaca que esses produtos não são seguros.</p>
+<div class="grid">
+<div class="card"><div class="icon">🫁</div><h3>Pulmões</h3><p>O aerossol pode expor o sistema respiratório a substâncias tóxicas e está associado a problemas pulmonares.</p></div>
+<div class="card"><div class="icon">❤️</div><h3>Cardiovascular</h3><p>O uso está associado a problemas cardiovasculares e não deve ser tratado como uma opção sem riscos.</p></div>
+<div class="card"><div class="icon">🧠</div><h3>Cérebro em desenvolvimento</h3><p>A nicotina causa dependência e merece atenção especial durante a adolescência.</p></div>
+<div class="card"><div class="icon">⚠️</div><h3>Dependência</h3><p>Produtos com nicotina podem levar à dependência, inclusive versões que utilizam sais de nicotina.</p></div>
+</div>
+</section>
+
+<section>
+<div class="split">
+<div class="visual"><div class="lungs">🫁</div><div class="caption">Seu pulmão não foi feito para respirar aerossóis de vape.</div></div>
+<div><h2 class="title">Respirar é coisa séria.</h2><div class="points">
+<div class="point"><b>01</b><span><strong>Substâncias tóxicas</strong>O aerossol pode conter formaldeído, acroleína, diacetil e metais pesados.</span></div>
+<div class="point"><b>02</b><span><strong>Doenças pulmonares</strong>A Anvisa cita bronquite, DPOC, EVALI e outros problemas entre os riscos.</span></div>
+<div class="point"><b>03</b><span><strong>Nem tudo é conhecido</strong>Novas evidências continuam surgindo, então aparência tecnológica não significa segurança.</span></div>
+</div></div>
+</div>
+</section>
+
+<section id="cerebro">
+<h2 class="title">🧠 Nicotina + adolescência</h2>
+<p class="lead">Na adolescência, o cérebro ainda está em desenvolvimento. A nicotina pode causar dependência e afetar processos relacionados à atenção, aprendizagem e controle de impulsos.</p>
+<div class="brain"><b>DEPENDÊNCIA</b><div class="bar"><i></i></div><p style="color:var(--muted)">A dependência pode fazer surgir vontade de usar novamente e dificultar a interrupção do consumo.</p></div>
+<div class="warning"><b>⚠️ Importante:</b> sabor, cheiro ou aparência moderna não tornam o vape seguro.</div>
+</section>
+
+<section>
+<h2 class="title">🇧🇷 E no Brasil?</h2>
+<p class="lead">A RDC nº 855/2024 da Anvisa mantém a proibição de fabricar, importar, comercializar, distribuir, armazenar, transportar e fazer propaganda de dispositivos eletrônicos para fumar. O uso em ambientes coletivos fechados também é vedado.</p>
+<div class="grid">
+<div class="card"><div class="icon">🚫</div><h3>Proibidos</h3><p>A proibição de comercialização, importação e propaganda existe desde 2009 e foi atualizada em 2024.</p></div>
+<div class="card"><div class="icon">🏫</div><h3>Ambientes fechados</h3><p>O uso de dispositivos eletrônicos para fumar é vedado em ambientes coletivos fechados.</p></div>
+<div class="card"><div class="icon">📢</div><h3>Propaganda</h3><p>A publicidade e a divulgação comercial desses produtos são proibidas.</p></div>
+</div>
+</section>
+
+<section id="quiz" class="reveal">
+<h2 class="title">🧠 Quiz rápido</h2>
+<p class="lead">Responda uma por vez. No final, descubra quantas você acertou.</p>
+<div class="quiz">
+<div class="progress-wrap"><div class="progress-label"><span id="qLabel">Pergunta 1 de 4</span><span id="qPct">25%</span></div><div class="progress"><i id="qBar"></i></div></div>
+
+<div class="q active" data-a="B"><span class="badge">1 • conceitos</span><h3>O que significa DEF?</h3><div class="opts"><button>A) Dispositivo de exercício físico</button><button>B) Dispositivo Eletrônico para Fumar</button><button>C) Dose Eletrônica Farmacêutica</button><button>D) Dispositivo de energia fotônica</button></div></div>
+<div class="q" data-a="C"><span class="badge">2 • nicotina</span><h3>Qual substância pode causar dependência e estar presente em vapes?</h3><div class="opts"><button>A) Vitamina C</button><button>B) Oxigênio</button><button>C) Nicotina</button><button>D) Água pura</button></div></div>
+<div class="q" data-a="A"><span class="badge">3 • Brasil</span><h3>No Brasil, a fabricação e comercialização de DEFs são:</h3><div class="opts"><button>A) Proibidas</button><button>B) Liberadas sem restrições</button><button>C) Permitidas somente para adolescentes</button><button>D) Permitidas somente pela internet</button></div></div>
+<div class="q" data-a="D"><span class="badge">4 • aerossol</span><h3>Qual afirmação é verdadeira?</h3><div class="opts"><button>A) Todo vape produz apenas água</button><button>B) Sabores eliminam os riscos</button><button>C) Nicotina não causa dependência</button><button>D) O aerossol pode conter substâncias tóxicas</button></div></div>
+
+<div class="quiz-nav"><button id="prev">← Voltar</button><button id="next" class="primary">Próxima →</button></div>
+<div class="result" id="result"><div class="score" id="score"></div><h3 id="msg"></h3><p id="detail"></p><button class="btn" id="restart" style="border:0">Refazer quiz</button></div>
+</div>
+</section>
+
+<section id="fontes">
+<h2 class="title">📚 Fontes confiáveis</h2><p class="lead">O conteúdo foi estruturado com base em materiais oficiais da Anvisa e em informações técnico-científicas do Ministério da Saúde/INCA.</p>
+<div class="grid">
+<div class="source"><b>Anvisa — Cigarro eletrônico</b><br><a href="https://www.gov.br/anvisa/pt-br/assuntos/tabaco/cigarro-eletronico" target="_blank">Fonte oficial →</a></div>
+<div class="source"><b>Anvisa — RDC nº 855/2024</b><br><a href="https://www.gov.br/anvisa/pt-br/assuntos/tabaco/cigarro-eletronico/arquivos/sei_25351-911221_2019_74-tarjado_portal_parte12.pdf" target="_blank">Resolução →</a></div>
+<div class="source"><b>Anvisa — Perguntas frequentes</b><br><a href="https://www.gov.br/anvisa/pt-br/acessoainformacao/perguntasfrequentes/tabaco/cigarro-eletronico-2" target="_blank">Consultar →</a></div>
+<div class="source"><b>Nota Técnica Conjunta nº 233/2025 — MS/INCA/Anvisa</b><br><a href="https://www.gov.br/anvisa/pt-br/assuntos/tabaco/cigarro-eletronico/nota-tecnica-conjunta-no-233-2025-svsa-saps-ms-inca-anvisa.pdf/%40%40download/file" target="_blank">Documento →</a></div>
+</div>
+</section>
+
+<footer>VAPE•INFO — projeto educativo de prevenção e informação. Fontes oficiais consultadas em agosto de 2026.</footer>
+<script>
+const questions=[...document.querySelectorAll(".q")];
+let current=0, answers=new Array(questions.length);
+const label=document.getElementById("qLabel"),pct=document.getElementById("qPct"),bar=document.getElementById("qBar");
+function renderQ(){
+ questions.forEach((q,i)=>q.classList.toggle("active",i===current));
+ const n=current+1, percent=Math.round(n/questions.length*100);
+ label.textContent=`Pergunta ${n} de ${questions.length}`; pct.textContent=percent+"%"; bar.style.width=percent+"%";
+ document.getElementById("prev").style.visibility=current===0?"hidden":"visible";
+ document.getElementById("next").textContent=current===questions.length-1?"Ver resultado →":"Próxima →";
+}
+questions.forEach((q,i)=>q.querySelectorAll(".opts button").forEach((b,j)=>b.onclick=()=>{
+ q.querySelectorAll("button").forEach(x=>x.classList.remove("sel"));b.classList.add("sel");answers[i]=String.fromCharCode(65+j);
+}));
+document.getElementById("prev").onclick=()=>{if(current>0){current--;renderQ()}};
+document.getElementById("next").onclick=()=>{
+ if(!answers[current]){document.getElementById("detail").textContent="Escolha uma alternativa para continuar.";document.getElementById("result").style.display="block";document.getElementById("score").textContent="💜";document.getElementById("msg").textContent="Quase lá!";return}
+ document.getElementById("result").style.display="none";
+ if(current<questions.length-1){current++;renderQ()}
+ else showResult();
+};
+function showResult(){
+ let score=questions.reduce((s,q,i)=>s+(answers[i]===q.dataset.a?1:0),0);
+ document.getElementById("score").textContent=score+"/4";
+ document.getElementById("msg").textContent=score===4?"PERFEITO! ✨":score>=2?"MANDOU BEM! 💜":"VAMOS REVISAR! 🧠";
+ document.getElementById("detail").textContent=score===4?"Você dominou os principais pontos. Informação confiável é uma ótima ferramenta de prevenção.":score>=2?"Você já conhece vários pontos importantes. Vale revisar as seções do site para reforçar o que aprendeu.":"Dê uma olhada nas seções de pulmões, cérebro e legislação e tente novamente.";
+ document.getElementById("result").style.display="block";
+ document.getElementById("result").scrollIntoView({behavior:"smooth",block:"center"});
+}
+document.getElementById("restart").onclick=()=>{
+ answers=new Array(questions.length);current=0;
+ questions.forEach(q=>q.querySelectorAll("button").forEach(b=>b.classList.remove("sel")));
+ document.getElementById("result").style.display="none";renderQ();
+};
+renderQ();
+
+const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add("show")}),{threshold:.12});
+document.querySelectorAll(".reveal,.card").forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>
